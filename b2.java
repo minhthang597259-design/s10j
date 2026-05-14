@@ -1,17 +1,43 @@
-package btvnss1;
-import java.util.Scanner;
-public class b2 {
+class Shape {
+    public double area() {
+        return 0;
+    }
+}
+
+class Rectangle extends Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double area() {
+        return width * height;
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a,b;
-        a=sc.nextInt();
-        b=sc.nextInt();
-        System.out.println("first : "+a);
-        System.out.println("second : "+b);
-        System.out.println("tong : "+ (a+b));
-        System.out.println("hieu : "+ (a-b));
-        System.out.println("tich : "+ (a*b));
-        System.out.println("thuong : "+ (a/b));
-        System.out.println("phan du : "+ (a%b));
+        Shape s1 = new Rectangle(2, 3);
+        Shape s2 = new Circle(1);
+
+        System.out.println("Diện tích hình chữ nhật (s1): " + s1.area());
+        System.out.println("Diện tích hình tròn (s2): " + s2.area());
     }
 }
